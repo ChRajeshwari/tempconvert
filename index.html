@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Convert Using JS</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converting Usng JS</h1>
+
+        <div class="tempconvert">
+            <label for="Celcius">Celcius</label>
+            <input type="number" onchange="temp()" name="Celcius" id="Celcius" class="Celcius">
+        </div>
+
+        <div class="tempconvert">
+            <label for="Fahrenheit">Fahrenheit</label>
+            <input type="number" onchange="temp()" name="Fahrenheit" id="Fahrenheit" class="Fahrenheit">
+        </div>
+
+        <div class="tempconvert">
+            <label for="Kelvin">Kelvin</label>
+            <input type="number" onchange="temp()" name="Kelvin" id="Kelvin" class="Kelvin">
+        </div>
+
+    </div>
+
+    <script>
+
+        let Ce1=document.getElementById("Celcius");
+        let Fe1=document.getElementById("Fahrenheit");
+        let Ke1=document.getElementById("Kelvin");
+
+        function temp(){
+          const currentValue=event.target.value;
+
+          switch(event.target.name){
+            case "Celcius":
+            Ke1.value=currentValue+273.15;
+            Fe1.value=currentValue*18+32;
+            break;
+            
+            case "Fahrenheit":
+            Ce1.value=(currentValue-32)/1.8;
+            Ke1.value=(currentValue-32)/1.8+273.15;
+            break;
+            
+
+            case "Kelvin":
+            Ce1.value=currentValue+273.15;
+            Fe1.value=(currentValue-273.15)*18+32;
+            break;
+
+            default:
+                break;
+            
+          }
+
+
+        }
+    </script>
+</body>
+</html>
